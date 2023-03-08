@@ -1,0 +1,175 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 18, 2021, 11:13:22 PM
+    Author     : USER
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #ECF3FE;
+    font-family: monospace;
+    font-weight: bolder;
+    width: 100%;
+    color: #ECF3FE;
+}
+
+
+#header_title{
+    font-size:50px;
+    color: yellow;
+    background-color: #2b2c2f;
+    text-align: center;
+    height:160px;
+}
+
+#buttons_bar{
+    background-color: #2b2c2f;
+    font-size:30px;
+    width:100%;
+}
+
+
+#doctor_table{
+    display:none;
+}
+
+#doctor_table {
+    font-size:16px;
+    text-align:center;
+    width:54%;
+    margin-left: 23%;
+    margin-right: -23%;
+    background-color: #85a9ff;
+}
+
+table, th, td {
+    font-weight: bolder;
+    border-color: #ECF3FE;
+    border-style: solid;
+    border-width: 3px;
+    border-collapse: collapse;
+    font-weight: bolder;
+    color: #ECF3FE;
+    padding: 10px;
+}
+
+th {
+    background-color: #7393de;
+    text-align: center;
+}
+ 
+
+.row{
+    display: flex;
+    width:100%;
+}
+
+#Certified_Doctor_div{
+    flex: 50%;
+    padding: 10px;
+    height:400px;
+    float:right;
+    text-align:center;
+    font-size: 28px;
+    width:290px;
+    color:black;
+    font-family: monospace;
+    background-color: #5B84B1FF;
+}
+
+#Delete_Doctor_div{
+    padding: 10px;
+    height:400px;
+    flex: 50%;
+    float:left;
+    text-align:center;
+    font-family: monospace;
+    font-size: 28px;
+    width:290px;
+    color:black;
+    background-color: rgb(170, 170, 170);
+}
+
+#certified_doctor{
+    text-align:center;
+    font-size: 23px;
+    width:230px;
+    height:40px;
+    color:black;
+    background-color: rgb(255, 122, 109);
+}
+
+
+#delete_doctor{
+    text-align:center;
+    font-size: 23px;
+    width:230px;
+    height:40px;
+    color:black;
+    background-color: rgb(248, 233, 23);
+}
+
+#user_table{
+    display: none;
+}
+
+#user_table{
+    font-size:16px;
+    text-align:center;
+    width:32%;
+    margin-left: 34%;
+    margin-right: -34%;
+    background-color: #85a9ff;
+}
+
+#Delete_User_div{
+    padding: 10px;
+    height:400px;
+    width: 100%;
+    text-align:center;
+    font-family: monospace;
+    font-size: 28px;
+    color:black;
+    background-color: rgb(170, 170, 170);
+}
+
+
+#seeusers_button{
+    margin-left: 35%;
+    margin-right:-35%;
+    width:10%;
+    height:35px;
+    font-size:22px;
+    font-weight:bold;
+    background-color: rgb(239, 190, 190);
+    
+    
+}
+
+#seedoctors_button{
+    margin-left: 35%;
+    margin-right:-35%;
+    width:10%;
+    height:35px;
+    font-size:22px;
+    font-weight:bold;
+    background-color: rgb(153, 204, 255);
+}
+
+#logout_button{
+    margin-left: 35%;
+    margin-right:-35%;
+    width:10%;
+    height:35px;
+    font-size:22px;
+    font-weight:bold;
+    background-color: rgb(255, 51, 0);
+}

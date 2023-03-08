@@ -1,0 +1,174 @@
+body {
+    background-color: #ECF3FE;
+    font-family: monospace;
+    width: 100%;
+}
+
+header {
+    display: flex;
+    background-color: #abc4ff;
+    text-align: left;
+    padding: 0.5%;
+    width: 100%;
+     font-size: 40px;
+}
+
+header>h1 {
+    margin-left: 3%;
+    color: aliceblue;
+   
+}
+
+#back_button{
+    border: none;
+    background-color: transparent;
+   
+    
+}
+
+h2 {
+    text-align: center;
+    color: aliceblue;
+    background-color: #b6ccfe;
+    width: 100%;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flex-container>div {
+    margin: 20px;
+}
+
+.flex-container>div>label {
+    font-weight: bolder;
+}
+
+#password_eye {
+    border: none;
+    background-color: transparent;
+}
+
+#amka{
+    width: 120px;
+}
+
+#short_password, #weak_password, #checkbox_message {
+    font-size: 13px;
+    font-weight: bolder;
+    color: red;
+    display: none;
+}
+
+#medium_password{
+    font-size: 13px;
+    font-weight: bolder;
+    color: orange;
+    display: none;
+}
+
+#strong_password{
+    font-size: 13px;
+    font-weight: bolder;
+    color: green;
+    display: none;
+}
+
+#doctor_specialty, #doctor_info_container, #lat, #lon  {
+    display: none;
+}
+
+#certified_container{
+    font-weight: bolder;
+    display: none;
+}
+
+
+#postcode {
+    width: 150px;
+}
+
+#height, #weight {
+    -webkit-appearance: none!important;
+    border: 1px solid gray;
+    border-right: 5px;
+    outline: none;
+    width: 50px;
+}
+
+#Map{
+    width: 35%;
+    height: 200px;
+    border: 5px solid #b6ccfe;
+    border-radius: 4%;
+}
+
+.munit {
+    -webkit-appearance: none!important;
+    text-align: center;
+    border: 1px solid gray;
+    border-left: 5px;
+    margin: 0 0 0 -10px;
+    color: gray;
+    font-weight: bolder;
+    background-color: lightgray;
+    width: 25px;
+}
+
+.required:before {
+    content: " *";
+    color: red;
+    font-weight: bolder;
+}
+
+#address_error{
+    color: red;
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+#address_check, #submit_button, #auto_fill {
+    background-color: #BBD4FB;
+    color: #5C7FFF;
+    font-weight: bolder;
+    border: 2px solid #5C7FFF;
+    padding: 10px;
+}
+
+#address_check:hover, #submit_button:hover, #auto_fill:hover {
+    opacity: 50%;
+}
+
+#submit_error{
+    color: red;
+    font-weight: bolder;
+    font-size: 12px;
+
+}
+
+footer {
+    position: fixed;
+    background-color: #abc4ff;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    padding: 0.5%;
+    justify-content: center;
+    display: flex;
+}
+
+footer>img {
+    border: 0px;
+    width: 88px;
+    height: 31px;
+    margin: 5px;
+}
+
+footer>h6 {
+    color: aliceblue;
+    text-align: center;
+    margin: 5px;
+}

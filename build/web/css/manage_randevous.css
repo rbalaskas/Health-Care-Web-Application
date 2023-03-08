@@ -1,0 +1,321 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 3, 2022, 5:10:02 PM
+    Author     : USER
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background-color: #ECF3FE;
+    font-family: monospace;
+    font-weight: bolder;
+    width: 100%;
+    color: #ECF3FE;
+}
+
+
+#header_title{
+    font-size:50px;
+    color: yellow;
+    background-color: #2b2c2f;
+    text-align: center;
+    height:130px;
+}
+
+
+#buttons_bar{
+    background-color: #2b2c2f;
+    font-size:30px;
+    width:100%;
+    height:70px;
+    text-align: center;
+}
+
+#seerandevouz_button,#deleterandevouz_button,#updaterandevouz_button{
+    font-size:25px;
+    margin-top:-3%;
+}
+
+
+#randevouz_table_done{
+    display: none;
+}
+
+#randevouz_table_done {
+    font-size:16px;
+    text-align:center;
+    width:40%;
+    margin-left: 30%;
+    margin-right: -30%;
+    background-color: #85a9ff;
+}
+
+#randevouz_table_free{
+    display: none;
+}
+
+#randevouz_table_free {
+    font-size:16px;
+    text-align:center;
+    width:40%;
+    margin-left: 30%;
+    margin-right: -30%;
+    background-color: #85a9ff;
+}
+
+
+table, th, td {
+    font-weight: bolder;
+    border-color: #ECF3FE;
+    border-style: solid;
+    border-width: 3px;
+    border-collapse: collapse;
+    font-weight: bolder;
+    color: #ECF3FE;
+    padding: 10px;
+}
+
+th {
+    background-color: #7393de;
+    text-align: center;
+}
+
+
+
+#Add_Randevouz_div{
+    margin-top:-3.5%;
+    width:100%;
+    height:70vh;
+    text-align:center;
+    font-size: 28px;
+    color:black;
+    font-family: monospace;
+    background-color: #5B84B1FF;
+    position: relative;
+}
+
+
+#Get_Doctor_Randevou{
+    margin-top:2%;
+    height: 78vh;
+    text-align:center;
+    font-size: 28px;
+    width:100%;
+    color:black;
+    font-family: monospace;
+    position: relative;
+    background-color: rgb(153, 255, 204);
+}
+
+
+
+#add_randevou_button{
+    width:14%;
+    height:40px;
+    font-size:25px;
+    font-weight:bold;
+    background-color: rgb(239, 190, 190);
+    text-align:center;
+}
+
+
+#Update_Randevou_div{
+    margin-top:2%;
+    height: 78vh;
+    text-align:center;
+    font-size: 28px;
+    width:100%;
+    color:black;
+    font-family: monospace;
+    position: relative;
+    background-color: rgb(153, 255, 204);
+}
+
+
+#Delete_Randevou_div{
+    margin-top:-3.5%;
+    height: 38vh;
+    text-align:center;
+    font-size: 28px;
+    width:100%;
+    color:black;
+    font-family: monospace;
+    position: absolute;
+    background-color: rgb(170, 170, 170);
+}
+
+
+#update_randevou_button{
+    background-color: rgb(51, 153, 255);
+    color: black;
+    font-size:26px;
+    text-align: center;
+}
+
+#delete_randevou_button{
+    background-color: rgb(51, 153, 255);
+    color: black;
+    font-size:26px;
+    text-align: center;
+}
+
+
+#user_table{
+    display: none;
+}
+
+#user_table{
+    font-size:16px;
+    text-align:center;
+    width:36%;
+    margin-left: 32%;
+    margin-right: -32%;
+    background-color: #85a9ff;
+}
+
+#Get_User_Bloodtest{
+    margin-top:2%;
+    height:400px;
+    width: 100%;
+    text-align:center;
+    font-family: monospace;
+    font-size: 28px;
+    color:black;
+    background-color: rgb(170, 170, 170);
+}
+
+
+#bloodtest_table{
+    display: none;
+}
+
+#bloodtest_table{
+    margin-top:2%;
+    font-size:16px;
+    text-align:center;
+    width:80%;
+    margin-left: 10%;
+    margin-right: -10%;
+    background-color: #85a9ff;
+    margin-bottom: 2%;
+}
+
+#getbloodtest_button{
+    width:14%;
+    height:40px;
+    font-size:25px;
+    font-weight:bold;
+    background-color: rgb(239, 190, 190);
+    text-align:center;
+}
+
+
+#treatment_table{
+    display: none;
+}
+
+#treatment_table{
+    margin-top:2%;
+    font-size:16px;
+    text-align:center;
+    width:50%;
+    margin-left: 25%;
+    margin-right: -25%;
+    background-color: #85a9ff;
+    margin-bottom: 2%;
+}
+
+
+#Add_Treatment_div{
+    height: 45vh;
+    text-align:center;
+    font-size: 28px;
+    width:100%;
+    color:black;
+    font-family: monospace;
+    position: absolute;
+    background-color: rgb(230, 204, 255);
+}
+
+#add_treatment_button{
+    width:14%;
+    height:40px;
+    font-size:25px;
+    font-weight:bold;
+    background-color: rgb(51, 204, 255);
+    text-align:center;
+}
+
+#messages_table{
+    display: none;
+}
+
+#messages_table{
+    margin-top:-2%;
+    font-size:16px;
+    text-align:center;
+    width:44%;
+    margin-left: 28%;
+    margin-right: -28%;
+    background-color: #85a9ff;
+    margin-bottom: 2%;
+}
+
+
+#Send_Messages_div{
+    height: 65vh;
+    text-align:center;
+    font-size: 28px;
+    width:100%;
+    color:black;
+    font-family: monospace;
+    position: relative;
+    background-color: rgb(51, 204, 255);
+}
+
+#Get_User_Message{
+    height: 45vh;
+    text-align:center;
+    font-size: 28px;
+    width:100%;
+    color:black;
+    font-family: monospace;
+    position: relative;
+    background-color: rgb(230, 204, 255);
+}
+
+
+
+#doctor_randevouz_table{
+    display: none;
+}
+
+#doctor_randevouz_table{
+    margin-top:2%;
+    font-size:16px;
+    text-align:center;
+    width:36%;
+    margin-left: 32%;
+    margin-right: -32%;
+    background-color: #85a9ff;
+    margin-bottom: 2%;
+}
+
+#get_randevouz_button{
+    width:14%;
+    height:40px;
+    font-size:25px;
+    font-weight:bold;
+    background-color: rgb(51, 204, 255);
+    text-align:center;
+}
+

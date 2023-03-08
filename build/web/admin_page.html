@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Platform Login Page</title>
+        <meta name="description" content="Admin page">
+        <meta name="keywords" content="Admin page">
+        <meta name="author" content="Rafael Balaskas">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+        <link rel="stylesheet" href="css/admin_page.css">
+        
+        <script src="js/admin_page.js"></script>
+        
+        
+    </head>
+
+    <body>
+        
+        <div id="Header">
+            <h1 id="header_title"> Admin Homepage</h1>
+        </div>
+        
+         <div id="buttons_bar">
+            <button type="button" id="seeusers_button" onclick="getUsers_admin();return false;">See Users</button>
+            <button type="button" id="seedoctors_button" onclick="getDoctors();return false;">See Doctors</button>
+            <button type="button" id="logout_button" onclick="logout();">Logout</button> 
+        </div>
+
+        <br><br>
+        <table id="doctor_table"></table>
+        
+        <table id="user_table"></table>
+        
+        <br><br>
+        <div class="row">
+
+            <div id="Certified_Doctor_div" style="display:none;">
+                    <br><hr color=black size=7 style="width:30%; margin-left:35% !important; margin-right:35% !important;" /><br>
+                    <label id="save_message"></label>
+                    <h4> Certifie not a Certified Doctor!</h4><br>
+                    <form id="certifieForm">
+                    <input type="text" minlength="11" maxlength="11" id="amka" name="amka" pattern="[0-9]{11}" placeholder="AMKA" required style="font-size:20px;"><br><br>
+                    <label class="required">Certified Doctor:</label>
+                    <input type="radio" name="certified" value="1" required> <label>Yes</label> &nbsp;
+                    <input type="radio" name="certified" value="0" > <label>No</label> <br><br>
+                    <button type="button" name="certified_doctor" id="certified_doctor" onclick="certifieddoctor();return false;">Certifie Doctor</button><br>
+                    </form>
+                    <br><hr color=black size=7 style="width:30%; margin-left:35% !important; margin-right:35% !important;" /><br>
+            </div>
+
+            
+            
+           <div id ="Delete_Doctor_div" style="display:none;">
+                    <br><hr color=black size=7 style="width:30%; margin-left:35% !important; margin-right:35% !important;" /><br>
+                    <label id="_save_message"></label>
+                    <h4> Delete Doctor only with doctor id number!</h4><br>
+                    <form id="deleteadoctor">
+                    <input type="text" minlength="11" maxlength="11" id="doctor_id" name="doctor_id" pattern="[0-9]{11}" placeholder="Doctor id" required style="font-size:20px;"><br><br>
+                    <button type="button" name="delete_doctor" id="delete_doctor" onclick="deletedoctor();return false;">Delete Doctor</button><br>
+                    </form>
+                    <br><hr color=black size=7 style="width:30%; margin-left:35% !important; margin-right:35% !important;" /><br>
+            </div>
+
+        </div>
+         
+        
+        
+        
+        <div id ="Delete_User_div" style="display:none;">
+                    <br><hr color=black size=7 style="width:30%; margin-left:35% !important; margin-right:35% !important;" /><br>
+                    <label id="save_message__"></label>
+                    <h4> Delete User only with user_id number!</h4><br>
+                    <form id="deleteaUser">
+                    <input type="text" minlength="11" maxlength="11" id="user_id" name="user_id" pattern="[0-9]{11}" placeholder="User id" required style="font-size:20px;"><br><br>
+                    <button type="button" name="delete_user" id="delete_user" onclick="deleteaUser();return false;">Delete User</button><br>
+                    </form>
+                    <br><hr color=black size=7 style="width:30%; margin-left:35% !important; margin-right:35% !important;" /><br>
+            </div>
+        
+        
+    </body>
+
+</html>

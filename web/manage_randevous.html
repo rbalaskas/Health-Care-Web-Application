@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Platform Login Page</title>
+        <meta name="description" content="Manage Randevous">
+        <meta name="keywords" content="Manage Randevous">
+        <meta name="author" content="Rafael Balaskas">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/manage_randevous.css">
+        
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        
+        
+        <script src="js/manage_randevouz.js"></script>
+        <script src="js/login_page.js"></script>
+        
+        
+    </head>
+
+    <body>
+        
+        <div id="Header">
+            <h1 id="header_title"> Manage Randevous</h1>
+        </div>
+        
+        <div id="buttons_bar">
+            <button type="button" id="seerandevouz_button" onclick="Home_Page();return false;">HomePage</button>
+            <button type="button" id="seerandevouz_button" onclick="add_randevou_div();return false;">Add Randevouz</button>
+            <button type="button" id="seerandevouz_button" onclick="seerandevouz();return false;">See Randevouz</button>
+            <button type="button" id="seerandevouz_button" onclick="getUsers();return false;">See Users</button>
+            <button type="button" id="seerandevouz_button" onclick="for_get_messages_div();return false;">See Messages</button>
+        </div>
+
+        <br><br>
+        
+        <br><br>
+
+        <div id="Add_Randevouz_div" >
+                
+                    <br><hr color=black size=7 style="width:50%; margin-left:25% !important; margin-right:25% !important;"/><br>
+                    <label id="message"></label><br>
+                    
+                    <h4> Add new randevou with free status!</h4><br>
+                    
+                    <form id="add_randevouz_form">
+                        
+                        <input type="text" minlength="1" maxlength="11" id="doctor_id" name="doctor_id" pattern="[0-9]" placeholder="Write Doctor id" required style="font-size:23px;" onchange="check_doctorid();"> 
+                        
+                        <input type="text" minlength="1" maxlength="11" id="user_id" name="user_id" pattern="[0-9]" placeholder="User id" value="0" required style="font-size:23px;"><br><br>
+                        
+                        <input type="datetime-local" id="datetime" name="date_time" min="2020-06-07T08:30" max="2025-06-14T20:30" required style="font-size:23px;" onchange="check_date();" disabled> 
+                        
+                        <input type="number" id="price" name="price" pattern="[0-9]" placeholder="Price" value="0" required style="font-size:23px;"> <br><br>
+                        
+                        <input type="text" id="doctor_info" name="doctor_info" placeholder="Doctor Info" value="Na exei safe pass" required style="font-size:23px;">
+                        
+                        <input type="text" id="user_info" name="user_info" placeholder="User Info" value="-" required style="font-size:23px;"><br><br>
+                        
+                        <label for="status">Status:</label><br>
+                        <select id="status" name="status" required style="font-size:23px;width:140px;">
+                            <option value="free">free</option>
+                            <option value="selected">selected</option>
+                        </select><br><br>
+                        
+                        
+                        <button type="button" name="add_randevou" id="add_randevou_button" onclick="addrandevouz();return false;"disabled>Add Randevouz</button><br>
+                    </form>
+                    <br><hr color=black size=7 style="width:50%; margin-left:25% !important; margin-right:25% !important;"/><br><br>
+                    
+            </div>
+        
+        
+            <table id="doctor_randevouz_table"></table>
+        
+        
+            <div id ="Get_Doctor_Randevou">
+                    <br><hr color=black size=7 style="width:30%; margin-left:35% !important; margin-right:35% !important;" /><br>
+                    <label id="_save_message__"></label><br><br>
+                    <h4> Get your Randevouz!</h4><br>
+                    
+                    <form id="get_randevouz_form">
+                        
+                        <input type="number" minlength="11" maxlength="11" id="_user_id" name="doctor_id" pattern="[0-9]{11}" placeholder="Doctor id" required style="font-size:25px;">
+                        
+                        <input type="datetime-local" minlength="11" maxlength="11" id="date_from_get" name="date_time_from" pattern="[0-9]{11}" placeholder="Date from search" required style="font-size:23px;"><br><br> 
+                        
+                         <input type="datetime-local" minlength="11" maxlength="11" id="date_to_get" name="date_time_to" pattern="[0-9]{11}" placeholder="Date to search" required style="font-size:23px;"><br><br>  
+                        
+                        <button type="button" name="get_randevouz_button" id="get_randevouz_button" onclick="get_randevouz_fordoctor();return false;">Find Randevouz</button><br>
+                    </form>
+                    <br><hr color=black size=7 style="width:30%; margin-left:35% !important; margin-right:35% !important;" /><br>
+            </div>
+        
+        
+     
+        
+        
+            <div id="done_table" style="font-size:23px; color:black; text-align:center; display: none"> <h4>Randevous with status DONE or Selected</h4></div><br>
+            <table id="randevouz_table_done"></table>
+            
+            
+            <div id="free_table" style="font-size:23px; color:black; text-align:center; display: none"> <h4> Randevous with status FREE OR CANCELLED</h4></div><br>
+            <table id="randevouz_table_free"></table>
+        
+        
+                <div id="Update_Randevou_div" style="display:none;">
+                    
+                    <br><hr color=black size=7 style="width:30%; margin-left:35% !important; margin-right:35% !important;" /><br>
+                    <label id="save_message"></label>
+                    <h4 style="font-size:40px;"> Update Randevou</h4><br>
+                        
+                   <form id="update_randevou">
+                        
+                       <input type="text" id="randevou_id" name="randevouz_id" placeholder="Randevou id" value="-" required style="font-size:23px;"><br><br>
+                       
+                        <input type="text" minlength="1" maxlength="11" id="doctor_id_" name="doctor_id" pattern="[0-9]" placeholder="Write Doctor id" required style="font-size:23px;" onchange="check_doctorid_();"> 
+                        
+                        <input type="text" minlength="1" maxlength="11" id="user_id" name="user_id" pattern="[0-9]" placeholder="User id" value="0" required style="font-size:23px;"><br><br>
+                        
+                        <input type="datetime-local" id="datetime_" name="date_time" min="2020-06-07T08:30" max="2025-06-14T20:30" required style="font-size:23px;" onchange="check_date_();" disabled> 
+                        
+                        <input type="number" id="price" name="price" pattern="[0-9]" placeholder="Price" value="0" required style="font-size:23px;"> <br><br>
+                        
+                        <input type="text" id="doctor_info" name="doctor_info" placeholder="Doctor Info" value="Na exei safe pass" required style="font-size:23px;">
+                        
+                        <input type="text" id="user_info" name="user_info" placeholder="User Info" value="-" required style="font-size:23px;"><br><br>
+                        
+                        <label for="status">Status:</label><br>
+                        <select id="status" name="status" required style="font-size:23px;width:140px;">
+                            <option value="free">free</option>
+                            <option value="selected">selected</option>
+                            <option value="cancelled">cancelled</option>
+                            <option value="done">done</option>
+                        </select><br><br>
+                        
+                        <button type="button" name="update_randevou" id="update_randevou_button" onclick="updaterandevouz();return false;"disabled>Update Randevou</button><br>
+                    </form>
+                    
+                    <br><hr color=black size=7 style="width:30%; margin-left:35% !important; margin-right:35% !important;" />
+                </div>
+                
+                
+                <div id ="Delete_Randevou_div" style="display:none;">
+                    
+                    <br><hr color=black size=7 style="width:30%; margin-left:35% !important; margin-right:35% !important;" /><br>
+                    <label id="save_message_"></label>
+                    <h4 style="font-size:40px;"> Delete Randevou</h4><br>
+                    
+                    <form id="delete_randevou">
+                        <input type="text" minlength="11" maxlength="11" id="randevouz_id" name="randevouz_id" pattern="[0-9]" placeholder="Randevouz id" required style="font-size:20px;" onchange="check_randevouzid_();"><br><br>
+                        <button type="button" name="delete_randevou" id="delete_randevou_button" onclick="deleterandevouz();return false;" disabled>Delete Randevou</button><br>
+                    </form>
+                    
+                    <br><hr color=black size=7 style="width:30%; margin-left:35% !important; margin-right:35% !important;" /><br>
+                </div>
+
+            
+            
+                <table id="user_table"></table>
+            
+        
+                <div id ="Get_User_Bloodtest" style="display:none;">
+                    <br><hr color=black size=7 style="width:30%; margin-left:35% !important; margin-right:35% !important;" /><br>
+                    <label id="save_message__"></label><br><br>
+                    <h4> Get User bloodtest only with AMKA number and User id!</h4><br>
+                    <form id="get_bloodtest">
+                    <input type="text" minlength="11" maxlength="11" id="_amka" name="amka" pattern="[0-9]{11}" placeholder="AMKA" required style="font-size:20px;"><br>
+                    <input type="text" maxlength="11" id="user_id" name="user_id" pattern="[0-9]{11}" placeholder="User id" required style="font-size:20px;"><br><br>
+                    <button type="button" name="getbloodtest_button" id="getbloodtest_button" onclick="get_bloodtest();return false;">Get Bloodtests</button><br>
+                    </form>
+                    <br><hr color=black size=7 style="width:30%; margin-left:35% !important; margin-right:35% !important;" /><br>
+                </div>
+                
+                
+                <table id="bloodtest_table"></table>
+                
+                
+                 <table id="treatment_table"></table>
+                
+                <div id ="Add_Treatment_div" style="display:none;">
+                    
+                    <br><hr color=black size=7 style="width:30%; margin-left:35% !important; margin-right:35% !important;" /><br>
+                    <label id="success_message"></label>
+                    <h4 style="font-size:40px;"> Add Treatment</h4><br>
+                    
+                    <form id="add_treatment_form">
+                        
+                        <input type="text" minlength="11" maxlength="11" id="doctor_id" name="doctor_id" pattern="[0-9]" placeholder="Doctor id" required style="font-size:20px;" >
+                        
+                        <input type="text" minlength="11" maxlength="11" id="user_id" name="user_id" pattern="[0-9]" placeholder="User id" required style="font-size:20px;" >
+                        
+                        <input type="date" id="start_date" name="start_date" pattern="[0-9]" placeholder="Start date"  required style="font-size:23px;"> <br><br>
+                        
+                        <input type="date" id="end_date" name="end_date" pattern="[0-9]" placeholder="End date" required style="font-size:23px;">
+                        
+                        <input type="text" id="treatment_text" name="treatment_text" placeholder="Treatment text" required style="font-size:23px;">
+                        
+                        <input type="number" id="bloodtest_id" name="bloodtest_id" placeholder="Bloodtest id " required style="font-size:23px;"><br><br>
+                        
+                        <button type="button" name="add_treatment_" id="add_treatment_button" onclick="add_treatment();return false;">Add treatment</button><br>
+                        
+                    </form>
+                    
+                    <br><hr color=black size=7 style="width:30%; margin-left:35% !important; margin-right:35% !important;" /><br>
+                </div> 
+                 
+                
+                <div id="columnchart_values" style="width: 900px; height: 300px; display:none"></div>
+                
+                <table id="messages_table"></table>
+                
+                <div id ="Get_User_Message" style="display:none;">
+                    <br><hr color=black size=7 style="width:30%; margin-left:35% !important; margin-right:35% !important;" /><br>
+                    <label id="_save_message__"></label><br><br>
+                    <h4> Get User Messages only with User id!</h4><br>
+                    <form id="get_all_messages_form">
+                        
+                        <input type="text" minlength="11" maxlength="11" id="_user_id" name="user_id" pattern="[0-9]{11}" placeholder="User id" required style="font-size:20px;"><br><br>  
+                        
+                        <button type="button" name="getbloodtest_button" id="getbloodtest_button" onclick="seeMessages();return false;">Get Messages</button><br>
+                    </form>
+                    <br><hr color=black size=7 style="width:30%; margin-left:35% !important; margin-right:35% !important;" /><br>
+                </div>
+                
+                
+                
+                
+                <div id ="Send_Messages_div" style="display:none;">
+                    <br><hr color=black size=7 style="width:30%; margin-left:35% !important; margin-right:35% !important;" /><br>
+                    <label id="_success_message"></label><br><br>
+                    <h4> Send reply to User!</h4><br>
+                    
+                  <form id="send_message_form">
+                        
+                    <input type="number" minlength="11" maxlength="11" id="doctor_id" name="doctor_id" pattern="[0-9]{11}" placeholder="Doctor id" required style="font-size:20px;">
+                    <input type="number" maxlength="11" id="user_id" name="user_id" pattern="[0-9]{11}" placeholder="User id" required style="font-size:20px;">
+                    <input type="text" id="_datetime" name="date_time" min="2020-06-07T08:30" max="2025-06-14T20:30" required style="font-size:23px;" onclick="take_datetime();"  ><br><br>
+                    
+                    <input type="text" id="message" name="message" placeholder="Message" required style="font-size:23px;">
+                    <input type="text" id="sender" name="sender" placeholder="Sender" value="Doctor" required style="font-size:23px;"><br><br>
+                    <input type="number" minlength="11" maxlength="11" id="blood_donation" name="blood_donation" pattern="[0-1]{1}" placeholder="BloodDoonor (0 or 1)" required style="font-size:20px;">
+                    <input type="text" maxlength="3" id="bloodtype" name="bloodtype" placeholder="Blood Type" required style="font-size:20px;"><br><br>
+                    
+                    <button type="button" name="getbloodtest_button" id="getbloodtest_button" onclick="send_message();return false;">Send Message</button><br>
+                    
+                  </form>
+                    <br><hr color=black size=7 style="width:30%; margin-left:35% !important; margin-right:35% !important;" /><br>
+                    
+                </div>
+                
+    </body>
+
+</html>

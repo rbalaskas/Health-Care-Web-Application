@@ -1,0 +1,200 @@
+body {
+    background-color: #ECF3FE;
+    font-family: monospace;
+    font-weight: bolder;
+    width: 100%;
+    color: #ECF3FE;
+}
+
+header {
+    background-color: #abc4ff;
+    text-align: center;
+    padding: 0.5%;
+    width: 100%;
+}
+
+.flex-container {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.flex-container>div {
+    margin: 20px;
+}
+
+header>h1 {
+    color: aliceblue;
+}
+
+.center{
+    margin: auto;
+    padding: 2%;
+    width: 40%;
+}
+
+#doctor_table{
+    display: none;
+}
+
+#login_box{
+    margin-top: -2%;
+    margin-bottom: 3%;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #85a9ff;
+}
+
+table, th, td {
+    font-weight: bolder;
+    border-color: #ECF3FE;
+    border-style: solid;
+    border-width: 3px;
+    border-collapse: collapse;
+    font-weight: bolder;
+    color: #ECF3FE;
+    padding: 10px;
+}
+
+th {
+    background-color: #7393de;
+    text-align: center;
+}
+
+hr {
+    width: 90%;
+    height: 2px;
+    background-color: aliceblue;
+}
+
+.munit {
+    -webkit-appearance: none!important;
+    text-align: center;
+    border: 1px solid gray;
+    border-left: 5px;
+    margin: 0 0 0 -10px;
+    color: gray;
+    font-weight: bolder;
+    background-color: lightgray;
+    width: 25px;
+}
+
+label{
+    font-size: 30px;
+}
+
+input{
+    border: none;
+}
+
+#personal_info_box,#bmi_box, #home_button, #edit_profile_button,#certified_doctors_button, #logout_button,#ideal_weight_box, #attack_check,#Randevouz{
+    display: none;
+}
+
+
+#login_box, #personal_info_box,#bmi_box,#ideal_weight_box{
+    background-color: #abc4ff;
+    text-align: center;
+    border-radius: 3%;
+}
+
+#personal_info_box{
+    padding: 2%;
+    width: 40%;
+}
+
+#bmi_box,#ideal_weight_box{
+    height:auto;
+    padding: 4%;
+    width: auto;
+
+}
+
+#health_box{
+
+    width: 25%;
+}
+
+
+#home_box{
+    margin-top: 3%;
+}
+
+
+button {
+    background-color: #ECF3FE;
+    color: #88abfb;
+    font-weight: bolder;
+    font-size: 20px;
+    border: none;
+    padding: 3%;
+    border-radius: 5%;
+}
+
+button:hover {
+    opacity: 50%;
+}
+
+#edit_profile_button, #logout_button,#certified_doctors_button ,#Randevouz , #home_button{
+    font-size: 15px;
+    padding: 0.6%;
+    margin: auto;
+    margin-right:5px;
+}
+
+#password_eye {
+    background-color: transparent;
+    border: none;
+    color: aliceblue;
+    font-size: 15px;
+    padding: 0px;
+}
+
+#password_eye_login{
+    background-color: transparent;
+    border: none;
+    color: aliceblue;
+    font-size: 15px;
+    padding: 0px;
+}
+
+#save_message{
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+#lat_lon{
+    display: none;
+}
+
+#save_box{
+    display:none;
+}
+
+
+footer {
+    background-color: #abc4ff;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    padding: 0.5%;
+    justify-content: center;
+    display: flex;
+}
+
+footer>img {
+    border: 0px;
+    width: 88px;
+    height: 31px;
+    margin: 5px;
+}
+
+footer>h6 {
+    color: aliceblue;
+    text-align: center;
+    margin: 5px;
+}
